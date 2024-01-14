@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/fetchDataSlice";
 import Recommended from "../Recommended/Recommended";
+import Popular from "../Popular/Popular";
 import Loading from "../Loading/Loading";
 import "./books.scss";
 
@@ -63,7 +64,8 @@ const Books = () => {
             </li>
           ))}
         </ul>
-        <span className="mt-[122px] text-black text-[25px] font-thirdFont font-bold mb-[25px]">
+        <div className="w-[300px] h-[1px] mt-[61px] bg-[#DEDEDE]"></div>
+        <span className="mt-[61px] text-black text-[25px] font-thirdFont font-bold mb-[25px]">
           Recomendations
         </span>
         <ul className="flex flex-col gap-[25px] w-full">
@@ -80,6 +82,28 @@ const Books = () => {
             <button>Trending</button>
           </li>
         </ul>
+      </div>
+      <div>
+        <div className="m-8 bg-[#fff] box-shadow: 0px 15px 80px 0px rgba(0, 0, 0, 0.1) pl-8  pb-8">
+          <h2 className="text-black font-mainFont text-[40px] font-medium tracking-[0.08px] mb-[60px]">
+            Recommended
+          </h2>
+          <div className="flex flex-wrap gap-[103px]">
+            {Array.isArray(data?.items) &&
+              data.items
+                .slice(0, 4)
+                .map((book, index) => <Recommended key={index} book={book} />)}
+          </div>
+          <h2 className="text-black font-mainFont text-[40px] font-medium tracking-[0.08px] mb-[60px] mt-[120px]">
+            Populer
+          </h2>
+          <div className="flex gap-[63px]">
+            {Array.isArray(data?.items) &&
+              data.items
+                .slice(3, 7)
+                .map((book, index) => <Popular key={index} book={book} />)}
+          </div>
+        </div>
       </div>
     </div>
   );

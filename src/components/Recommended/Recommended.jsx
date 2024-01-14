@@ -12,7 +12,7 @@ const Recommended = ({ book }) => {
         />
         <div className="flex flex-col gap-0">
           <span className="text-black font-mainFont text-[25px] leading-[35px] capitalize">
-            {book?.volumeInfo?.title.slice(0, 20)}
+            {book?.volumeInfo?.title.slice(0, 25)}
           </span>
           <span className="text-[rgba(0, 0, 0, 0.60)] font-mainFont text-base">
             {book?.volumeInfo?.authors[0]}
