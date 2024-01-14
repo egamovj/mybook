@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import star from "../../assets/icons/stars.svg";
 import noImage from "../../assets/images/defImage.jpg";
 
-const Recommended = ({ book }) => {
+const NewStory = ({ book }) => {
   return (
     <Link to={`/book/${book?.id}`}>
       <div className="flex gap-[23px] max-w-[416.21px] w-full h-[225.354px]">
@@ -13,7 +13,7 @@ const Recommended = ({ book }) => {
         />
         <div className="flex flex-col gap-0 justify-between">
           <span className="text-black font-mainFont font-bold text-[25px] leading-[35px] capitalize">
-            {book?.volumeInfo?.title.slice(0, 25)}...
+            {book?.volumeInfo?.title.slice(0, 25)}
           </span>
           <span className="text-[rgba(0, 0, 0, 0.60)] font-mainFont text-base">
             {book?.volumeInfo?.authors[0]}
@@ -33,4 +33,4 @@ const Recommended = ({ book }) => {
   );
 };
 
-export default Recommended;
+export default NewStory;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import star from "../../assets/icons/stars.svg";
 import noImage from "../../assets/images/defImage.jpg";
 
-const Popular = ({ book }) => {
+const Liked = ({ book }) => {
   return (
     <Link to={`/book/${book?.id}`}>
       <div className="flex flex-col max-w-[188px] h-[395px] justify-between ">
@@ -24,4 +24,4 @@ const Popular = ({ book }) => {
   );
 };
 
-export default Popular;
+export default Liked;
