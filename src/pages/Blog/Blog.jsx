@@ -1,5 +1,13 @@
+import Footer from "../../components/Footer/Footer";
+import HeaderBlog from "../../components/HeaderBlog/HeaderBlog";
+
 const Blog = () => {
-  return <div>Blog</div>;
+  return (
+    <div>
+      <HeaderBlog />
+      <Footer />
+    </div>
+  );
 };
 
 export default Blog;
