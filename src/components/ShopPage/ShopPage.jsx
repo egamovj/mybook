@@ -8,9 +8,7 @@ const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
 
 const ShopPage = () => {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.data.data);
-  const loading = useSelector((state) => state.data.loading);
-  const error = useSelector((state) => state.data.error);
+  const { loading, data, error } = useSelector((state) => state.data);
   const [selectGenre, setSelectGenre] = useState("all");
 
   const allGenres = [
