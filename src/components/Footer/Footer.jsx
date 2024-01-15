@@ -31,7 +31,7 @@ const Footer = () => {
                 className="font-mainFont text-white text-base font-medium"
                 to="/blog"
               >
-                About
+                Blog
               </Link>
             </li>
           </ul>

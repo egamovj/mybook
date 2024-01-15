@@ -9,7 +9,7 @@ import "./books.scss";
 import NewStory from "../NewStory/NewStory";
 import Liked from "../Liked/Liked";
 
-const APIKey = "AIzaSyAu41WO-IqXfP_9r728a181YYXLvsaRFfY";
+const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
 
 const Books = () => {
   const dispatch = useDispatch();
