@@ -6,7 +6,8 @@ import Loading from "../Loading/Loading";
 
 import noImage from "../../assets/images/defImage.jpg";
 
-const APIKEY = "5b2e28bcdf3f4ba096edc2ee1b507d31";
+// const APIKEY = "5b2e28bcdf3f4ba096edc2ee1b507d31";
+// f89aedffe4004565bf9d90debb7ec6d7
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const App = () => {
   const [visibleArticles, setVisibleArticles] = useState(6);
 
   useEffect(() => {
-    const url = `https://newsapi.org/v2/everything?domains=wsj.com&apiKey=${APIKEY}`;
+    const url = `https://newsdata.io/api/1/news?apikey=pub_364446d618145059965e418dec4a3b8596f86&q=books`;
     dispatch(fetchData(url));
   }, [dispatch]);
 
@@ -40,14 +41,14 @@ const App = () => {
         {data && (
           <>
             <div className="flex flex-wrap gap-4 justify-between">
-              {data?.articles
+              {data?.results
                 ?.slice(0, visibleArticles)
                 .map((article, index) => (
                   <div key={index} className="max-w-[406px] bg-white">
                     <img
-                      src={article?.urlToImage || noImage}
+                      src={article?.image_url || noImage}
                       alt={article?.title}
-                      className="w-[406px]"
+                      className="w-[406px] h-[364px]"
                     />
                     <div className="py-[47px] px-[44px] text-center flex flex-col justify-between gap-5">
                       <h3 className="text-[25px] font-mainFont font-medium leading-[30px] capitalize">
@@ -57,7 +58,7 @@ const App = () => {
                         {article?.description?.slice(0, 80)}...
                       </p>
                       <Link
-                        href={article?.url}
+                        href={article?.link}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -70,7 +71,7 @@ const App = () => {
                 ))}
             </div>
             <div className="text-center">
-              {visibleArticles < data?.articles?.length && (
+              {visibleArticles < data?.results?.length && (
                 <button
                   onClick={handleLoadMore}
                   className="mt-5 px-7 py-3 bg-[#FF971D1A#FF971D1A] text-[#FF971D] rounded-[10px] text-[18px] font-mainFont font-medium capitalize border-[1px] border-[#FF971D]"
