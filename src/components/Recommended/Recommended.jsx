@@ -25,7 +25,7 @@ const Recommended = ({ book }) => {
             </span>
           </div>
           <p className="text-[rgba(0, 0, 0, 0.30)] font-secondaryFont text-base tracking-[0.048px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit...
+            {book?.volumeInfo?.description.slice(0, 55)}...
           </p>
         </div>
       </div>
