@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { IoMdArrowBack } from "react-icons/io";
-
-import Loading from "../../components/Loading/Loading";
 import { fetchData } from "../../redux/fetchDataSlice";
 
+import Loading from "../../components/Loading/Loading";
+import Error from "../../components/Error/Error";
+
+import { IoMdArrowBack } from "react-icons/io";
 import star from "../../assets/icons/start.svg";
 import "./Book.scss";
 
@@ -31,7 +32,11 @@ const Book = () => {
   }
 
   if (error) {
-    return <p>Error</p>;
+    return (
+      <div>
+        <Error />
+      </div>
+    );
   }
 
   return (

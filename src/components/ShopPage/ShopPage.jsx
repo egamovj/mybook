@@ -21,6 +21,13 @@ const ShopPage = () => {
     "Biography",
   ];
 
+  const genresBottom = [
+    "Artist of the Month",
+    "Book of the Year",
+    "Top Genre",
+    "Trending",
+  ];
+
   useEffect(() => {
     dispatch(
       fetchData(
@@ -73,18 +80,16 @@ const ShopPage = () => {
             Recomendations
           </span>
           <ul className="flex flex-col gap-[25px] w-full">
-            <li>
-              <button>Artist of the Month</button>
-            </li>
-            <li>
-              <button>Book of the Year</button>
-            </li>
-            <li>
-              <button>Top Genre</button>
-            </li>
-            <li>
-              <button>Trending</button>
-            </li>
+            {genresBottom.map((genre, index) => (
+              <li key={index}>
+                <button
+                  onClick={() => handleGenre(genre)}
+                  className={selectGenre === genre ? "active" : ""}
+                >
+                  {genre}
+                </button>
+              </li>
+            ))}
           </ul>
         </div>
       </div>

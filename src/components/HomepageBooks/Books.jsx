@@ -16,6 +16,7 @@ const Books = () => {
   const dispatch = useDispatch();
   const { loading, data, error } = useSelector((state) => state.data);
   const [selectGenre, setSelectGenre] = useState("all");
+
   const allGenres = [
     "All Genres",
     "Business",
@@ -23,6 +24,13 @@ const Books = () => {
     "Fiction",
     "Philosophy",
     "Biography",
+  ];
+
+  const genresBottom = [
+    "Artist of the Month",
+    "Book of the Year",
+    "Top Genre",
+    "Trending",
   ];
 
   useEffect(() => {
@@ -76,18 +84,16 @@ const Books = () => {
           Recomendations
         </span>
         <ul className="flex flex-col gap-[25px] w-full">
-          <li>
-            <button>Artist of the Month</button>
-          </li>
-          <li>
-            <button>Book of the Year</button>
-          </li>
-          <li>
-            <button>Top Genre</button>
-          </li>
-          <li>
-            <button>Trending</button>
-          </li>
+          {genresBottom.map((genre, index) => (
+            <li key={index}>
+              <button
+                onClick={() => handleGenre(genre)}
+                className={selectGenre === genre ? "active" : ""}
+              >
+                {genre}
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
       <div className="pt-[60px]">
@@ -127,7 +133,7 @@ const Books = () => {
           <div className="flex gap-[63px]">
             {Array.isArray(data?.items) &&
               data.items
-                .slice(9, 13)
+                .slice(6, 10)
                 .map((book, index) => <Liked key={index} book={book} />)}
           </div>
         </div>
