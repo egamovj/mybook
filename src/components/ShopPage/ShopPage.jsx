@@ -5,7 +5,7 @@ import ShopPageBooks from "../ShopPageBooks/ShopPageBooks";
 import Loading from "../Loading/Loading";
 import Error from "../Error/Error";
 
-const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
+const APIKey = "AIzaSyAu41WO-IqXfP_9r728a181YYXLvsaRFfY";
 
 const ShopPage = () => {
   const dispatch = useDispatch();

@@ -10,7 +10,7 @@ import NewStory from "../NewStory/NewStory";
 import Liked from "../Liked/Liked";
 import Error from "../Error/Error";
 
-const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
+const APIKey = "AIzaSyAu41WO-IqXfP_9r728a181YYXLvsaRFfY";
 
 const Books = () => {
   const dispatch = useDispatch();
