@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/fetchDataSlice";
-import Loading from "../Loading/Loading";
 import ShopPageBooks from "../ShopPageBooks/ShopPageBooks";
+import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 
 const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
 
@@ -39,7 +40,11 @@ const ShopPage = () => {
   }
 
   if (error) {
-    return <h2>Error</h2>;
+    return (
+      <div>
+        <Error />
+      </div>
+    );
   }
 
   return (

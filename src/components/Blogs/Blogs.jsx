@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchData } from "../../redux/fetchDataSlice";
 import Loading from "../Loading/Loading";
+import Error from "../Error/Error";
 
 import noImage from "../../assets/images/defImage.jpg";
 
@@ -32,7 +33,11 @@ const App = () => {
   }
 
   if (error) {
-    return <div>Error occurred while fetching data.</div>;
+    return (
+      <div>
+        <Error />
+      </div>
+    );
   }
 
   return (

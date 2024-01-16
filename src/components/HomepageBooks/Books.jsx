@@ -8,6 +8,7 @@ import Loading from "../Loading/Loading";
 import "./books.scss";
 import NewStory from "../NewStory/NewStory";
 import Liked from "../Liked/Liked";
+import Error from "../Error/Error";
 
 const APIKey = "AIzaSyC4b0zHE214H19CzpZ9f6NsFzYrPECgkGQ";
 
@@ -43,7 +44,11 @@ const Books = () => {
   }
 
   if (error) {
-    return <h2>Error</h2>;
+    return (
+      <div>
+        <Error />
+      </div>
+    );
   }
 
   return (
